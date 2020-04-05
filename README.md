@@ -9,15 +9,15 @@ docker build -t awspec .
 
 init
 ```sh
-docker run -it --rm -v ~/.aws:/root/aws -v $(PWD):/work awspec awspec init
+docker run -it --rm -v ~/.aws:/root/.aws -v $(PWD):/work awspec awspec init
 ```
 
 run test
 ```sh
-docker run -it --rm -v ~/.aws:/root/aws -v $(PWD):/work awspec rake spec
+docker run -it --rm -v ~/.aws:/root/.aws -v $(PWD):/work awspec rake spec
 ```
 
 generate
 ```sh
-docker run -it --rm -v ~/.aws:/root/aws -v $(PWD):/work awspec awspec generate ec2 vpc-abc123 >> spec/ec2_spec.rb
+docker run -it --rm -v ~/.aws:/root/.aws -v $(PWD):/work awspec awspec generate ec2 vpc-abc123 >> spec/ec2_spec.rb
 ```
